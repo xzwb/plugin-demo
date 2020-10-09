@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>cc.yyf.plugin-demo</id>
+    <name>SecondPlugin</name>
+    <vendor email="xzwb@xiyoulinux.org" url="http://xzwb123.com">LinuxGroup</vendor>
+
+    <description><![CDATA[
+    这是一款可以再阅读代码时添加笔记，并将笔记生成文档的插件<br>
+    <em>生成markdown文档</em>
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id = "noteWindow" factoryClass="cc.yyf.window.NoteListWindowFactory" anchor="right">
+
+        </toolWindow>
+    </extensions>
+
+    <actions>
+        <action id="PopupActionID" class="cc.yyf.action.PopupAction" text="Add MBnote" description="添加mb笔记">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl P"/>
+        </action>
+    </actions>
+</idea-plugin>
