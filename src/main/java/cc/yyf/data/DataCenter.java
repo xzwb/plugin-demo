@@ -18,4 +18,11 @@ public class DataCenter {
     // 数据模型
     public static DefaultTableModel TABLE_MODEL = new DefaultTableModel(null, HEAD);
 
+    /**
+     * 清空
+     */
+    public static void reset() {
+        NOTE_LIST.clear();
+        TABLE_MODEL.setDataVector(null, HEAD);
+    }
 }

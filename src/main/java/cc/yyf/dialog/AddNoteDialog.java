@@ -4,6 +4,7 @@ import cc.yyf.data.DataCenter;
 import cc.yyf.data.DataConvert;
 import cc.yyf.data.NoteData;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.ui.MessageDialogBuilder;
 import com.intellij.ui.EditorTextField;
 import org.jetbrains.annotations.Nullable;
 
@@ -72,6 +73,8 @@ public class AddNoteDialog extends DialogWrapper {
             NoteData noteData = new NoteData(title, mark, DataCenter.SELECT_TEXT, DataCenter.FILE_NAME, fileType);
             DataCenter.NOTE_LIST.add(noteData);
             DataCenter.TABLE_MODEL.addRow(DataConvert.convert(noteData));
+            MessageDialogBuilder.yesNo("操作结果", "添加成功");
+            AddNoteDialog.this.dispose();
         });
         jPanel.add(button);
         return jPanel;
